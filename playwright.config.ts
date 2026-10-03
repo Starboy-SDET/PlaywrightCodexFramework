@@ -49,8 +49,12 @@ export default defineConfig({
         storageState: 'auth/storageState.json'
       },
       dependencies: ['setup'],
-      testIgnore: /.*\.setup\.ts/,
+      testIgnore: [/.*\.setup\.ts/, /.*APITest.*/],
     },
+    {
+    name: 'api-tests',
+    testMatch: /.*APITest.*/, // Run API tests completely independently without setup
+    }
 
     // {
     //   name: 'firefox',
